@@ -37,3 +37,17 @@ Java调用bartender
  
 
 库文件（dll）使用方法欢迎进群下载交流（927465926）
+
+基础使用:
+~~~~JBartender jBartender = new JBartender();
+        if (jBartender.initEngine()) {
+            if (jBartender.openTemplate("C:\\Users\\1234\\Desktop\\test.btw")) {
+                if (jBartender.getKeyCount() > 0) {
+                    jBartender.setSupportsIdenticalCopies(1);
+                    for (int i = 0; i < jBartender.getKeyCount(); i++) {
+                        System.out.println(jBartender.getKeyName(i)+"----"+jBartender.getKeyValue(i));
+                    }
+                    jBartender.closeSave();
+                }
+            }
+        }
